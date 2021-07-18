@@ -1,0 +1,464 @@
+.dashboard-score {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.dashboard-score-desc {
+    color: #fff;
+}
+
+.primary {
+    background: #39B54A !important;
+}
+
+.warning {
+    background: #F36E44 !important;
+}
+
+.transparent {
+    background: transparent !important;
+    color: #39B54A !important;
+}
+
+.transparent-warning {
+    background: transparent !important;
+    color: #F36E44 !important;
+}
+
+.body {
+    background-color: #f9f9f9;
+    font-family: Nunito Sans;
+}
+
+.sidebar-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.section-menu {
+    padding-bottom: 40px;
+}
+
+.section-menu p {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 19px;
+    display: flex;
+
+    color: #A4A4A4;
+}
+
+.section-menu li {
+    list-style-type: none;
+}
+
+.section-menu a {
+    border-radius: 8px;
+}
+
+.section-menu a:hover,
+.active {
+    background-color: #39B54A !important;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+
+.section-menu a:hover span,
+.active span {
+    color: #FFFFFF !important;
+}
+
+.section-menu img {
+    margin-right: 20px;
+    max-height: 30px;
+}
+
+.section-menu a:hover img,
+.active img {
+    filter: brightness(0) invert(1);
+}
+
+.section-menu span {
+    font-size: 18px;
+    line-height: 27px;
+    display: flex;
+    color: #444444;
+}
+
+.dash-icon {
+    float: left;
+    margin: 10px 15px 0px 0px;
+}
+
+
+.dash-title {
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 61px;
+    display: flex;
+
+    color: #39B54A;
+}
+
+.dash-subtitle {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 45px;
+    display: flex;
+
+    color: #444444;
+}
+
+.dash-card {
+    padding: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    display: block;
+    overflow: auto;
+    margin-bottom: 10px;
+}
+
+.dash-count {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 45px;
+    color: #444444;
+}
+
+.dash-select {
+    background: #FFFFFF;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.dash-select select {
+    display: none;
+}
+
+/* .dash-select select {
+    border: 0px;
+    outline: 0px;
+    width: 100%;
+    cursor: pointer;
+} */
+
+.dash-select select::-ms-expand {
+    display: none;
+}
+
+.dash-button {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 19px;
+    border: none;
+    color: #FFFFFF;
+}
+
+.dash-button .dash-icon {
+    float: left;
+    height: 15px;
+}
+
+.dash-input {
+    border: 2px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px;
+}
+
+.dash-datatable th {
+    background-color: transparent !important;
+    color: #444444 !important;
+    border-top: none;
+}
+
+.dash-datatable tr {
+    cursor: pointer;
+}
+
+.dataTables_paginate {
+    border: 1px solid #E5E5E5;
+    border-radius: 7px;
+    padding: 0 !important;
+}
+
+.dataTables_paginate span .current {
+    background: #39B54A !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #fff !important;
+}
+
+.dash-datatable input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+    /* filter: invert(22%) sepia(75%) saturate(11%) hue-rotate(45deg) brightness(97%) contrast(91%); */
+}
+
+.dash-datatable input[type=checkbox]:focus {
+    outline: 0;
+}
+
+.dash-search {
+    border: 2px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.fontAwesome {
+    font-family: Helvetica, 'FontAwesome', sans-serif;
+}
+
+input:focus {
+    outline: none !important;
+    border: 2px solid #39B54A;
+}
+
+textarea:focus {
+    outline: none !important;
+    border: 3px solid #39B54A !important;
+    box-shadow: none !important;
+}
+
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+textarea::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+textarea:disabled {
+    background-color: #EFEFEF4D !important;
+}
+
+.dash-alert {
+    color: #FFFFFF;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.user-name {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+    color: #444444;
+}
+
+.village-name {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 19px;
+    color: #444444;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #C4C4C4;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    margin-left: 15px
+}
+
+.dash-modal {}
+
+.modal-title {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 45px;
+    color: #444444;
+}
+
+.dash-modal label {
+    font-size: 18px;
+    line-height: 27px;
+    color: #444444;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+    background-color:#39B54A;
+}
+
+.custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
+    background-color:#39B54A;
+}
+
+.custom-checkbox .custom-control-input:focus~.custom-control-label::before{
+    box-shadow: none;
+}
+
+.custom-checkbox {
+    height:24px;
+}
+
+.dash-thumbnail {
+    width: 48px;
+    height: 48px;
+    float: left;
+    border-radius: 8px;
+}
+
+.dash-thumbnail-close {
+    width: 24px;
+    height: 24px;
+    float: right;
+    margin:10px 0;
+    cursor: pointer;
+}
+
+.gallery-sort {
+    background-color: #39B54A;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #FFF;
+    width: 40px;
+    height: 40px;
+    text-align:center;
+    margin:10px
+}
+
+.gallery-sort span {
+    position:relative;
+    top:20%
+}
+
+.gallery-thumbnail {
+    border: 4px solid #39B54A;
+}
+
+.thumbnail-pin {
+    background-color: #39B54A;
+    border-radius: 8px;
+    position: absolute;
+    left: 4%;
+    top: 0;
+    color: #FFF;
+    text-align:center;
+    padding: 15px;
+}
+
+.gallery-detail {
+    width: 100%;
+    height: 400px;
+}
+
+.galleryCard {
+    height:200px;
+    cursor: pointer;
+}
+
+.dropzone .dz-default,.dz-message{
+    display: none;
+}
+
+.openEditGallery, .openEditFacility, .openEditHoliday {
+    display: none;
+}
+
+.dash-dropdown-border {
+    border: 2px solid #E5E5E5;
+}
+
+.select2-container{
+    width: 100%!important;
+}
+
+.select2-selection
+{
+    border: none!important;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: #39B54A;
+    color: white;
+}
+
+.dash-dropdown-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+table.dash-datatable thead th {
+    padding: 8px 10px;
+}
+
+.dash-search-input {
+    position: relative;
+}
+
+.dash-search-input .search-icon {
+    position: absolute;
+    top: 6px;
+    left: 10px;
+}
+
+.dash-search-input .form-control {
+    padding-left: 42px;
+}
+.dash-placeholder {
+    font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--single {
+    background-color: #EFEFEF7D!important;
+    padding:5px!important;
+    height: auto;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #E5E5E53F!important;
+    padding:5px!important;
+    height: auto;
+}
+
+.pending-state {
+    float: left;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.date-pending {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 25px;
+    color: #A4A4A4;
+}
+
+.dash-datatable tr td {
+    cursor:default
+}
+
+.editable:disabled {
+    background-color: #EFEFEF7D!important;
+}
+
+#essentials-datatable tr td, #itineraries-datatable tr td{
+    cursor:pointer
+}
