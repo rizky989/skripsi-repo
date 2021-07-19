@@ -47,7 +47,7 @@
 </body>
 
 <!-- Jquery plugins-->
-<script src="{{ asset('vendor/jquery.min.js') }}"></script>
+<script src="{{ asset('js/jquery.min.js') }}"></script>
 <!-- CoreUI and necessary plugins-->
 <script src="{{ asset('core-ui') }}/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
 <!--[if IE]><!-->

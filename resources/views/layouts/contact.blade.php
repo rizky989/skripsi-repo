@@ -1,18 +1,21 @@
-
 @push('styles')
 <style>
     .contact-box {
         background-color: #222;
         color: #eee;
     }
-    .map {
+
+    #map_canvas {
         border: #eee 2px solid;
         border-radius: 8px;
-        height: 300px
+        height: 300px;
+        width: 100%
     }
-    .contact-info p{
+
+    .contact-info p {
         font-size: 16px
     }
+
 </style>
 @endpush
 <div class="contact-box p-5" id="search">
@@ -20,9 +23,7 @@
     <div class="px-3 row">
         <div class="col-7 px-3">
             <h4>Lokasi :</h4>
-            <div class="map">
-                a
-            </div>
+            <div id="map_canvas" class="rounded-lg"></div>
         </div>
         <div class="col-5 px-3 contact-info">
             <h4>Alamat :</h4>
@@ -38,3 +39,29 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZcRnZNUo8RkcCbO2bdM--pnf0_N8Uydw&libraries=geometry,drawing&ext=.js">
+</script>
+<script>
+    function initMap() {
+        const myLatLng = {
+            lat: -6.370290317012335,
+            lng: 106.8237992632583
+        };
+        const map = new google.maps.Map(document.getElementById("map_canvas"), {
+            zoom: 15,
+            center: myLatLng,
+        });
+        new google.maps.Marker({
+            position: myLatLng,
+            map,
+            title: "Hello World!",
+        });
+    }
+
+    initMap()
+
+</script>
+@endpush

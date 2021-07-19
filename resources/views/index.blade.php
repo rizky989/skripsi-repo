@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @push('styles')
 <style>
-    .carousel-inner {
+    .carousel-item {
         background-color: #27bebe;
         border: 2px solid #fefefe;
-        height: 350px;
+        height: 450px;
         border-radius: 8px
     }
 
@@ -35,13 +35,13 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="..." alt="First slide">
+                <img src="{{asset('image/banner.jpeg')}}" alt="First slide" style='height: 100%; width: 100%; object-fit: fill'>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Second slide">
+                <img src="{{asset('image/banner.jpeg')}}" alt="Second slide" style='height: 100%; width: 100%; object-fit: fill'>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Third slide">
+                <img src="{{asset('image/banner.jpeg')}}" alt="Third slide" style='height: 100%; width: 100%; object-fit: fill'>
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

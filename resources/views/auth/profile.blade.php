@@ -1,44 +1,94 @@
 @extends('layouts.app')
 @push('styles')
 <style>
-    .profile-box {
+    .profile-section {
         /* background-color: #27bebe; */
         color: #27bebe;
+        background-color: #fff;
         height: 100%;
     }
-    .login-box {
-        /* border: 2px solid #27bebe; */
-        background-color: #fff;
+
+    .profile-box {
+        border: 2px solid #27bebe;
         border-radius: 8px
     }
-    .login-label {
-        font-size:14px;
+
+    .form-label {
+        font-size: 14px;
         font-weight: bold
     }
+
+    .nav.nav-tabs {
+        float: left;
+        display: block;
+        margin-right: 20px;
+        border-bottom: 0;
+        border-right: none!important;
+        width: 100%;
+        font-size:18px;
+    }
+
+    .nav-tabs .nav-link {
+        border-top-left-radius: .25rem!important;
+        border-bottom-left-radius: .25rem!important;
+        border-top-right-radius: .25rem!important;
+        background: #fff;
+        color: #27bebe;
+    }
+
+    .nav-tabs .nav-link.active {
+        color: #fff;
+        background-color: #27bebe !important;
+        border-color: transparent !important;
+    }
+
+    .nav-tabs .nav-link {
+        border: 1px solid transparent;
+        border-top-left-radius: 0rem !important;
+        border-top-right-radius: 0rem !important;
+    }
+
+    .tab-content>.active {
+        display: block;
+        height: 100%
+    }
+
+    .nav.nav-tabs {
+        float: left;
+        display: block;
+        margin-right: 20px;
+        border-bottom: 0;
+        border-right: 1px solid transparent;
+        padding-right: 15px;
+    }
+
 </style>
 @endpush
 @section('content')
-<div class="profile-box ">
-    <div class="login-box p-5 text-center">
-        <h1 class="mb-5">Login</h1>
-        <form>
-            <div class="form-group row">
-                <label for="email" name="email" class="col-md-4 col-form-label text-md-right login-label">Email : </label>
-                <div class="col-md-6">
-                    <input id="email" type="email" class="form-control" name="email" required >
-                </div>
+<div class="row profile-section justify-content-md-center p-5">
+    <div class="row profile-box p-0 text-center col-10">
+        <div class="col-4 p-0 text-left" style="border-right: 2px solid #27bebe!important;">
+            <img src="{{asset('image/avatar.png')}}" width="80px" />
+            <ul class="nav nav-tabs p-0 m-0" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#publish" role="tab" aria-controls="publish">Publish Skripsi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#reset" role="tab"
+                        aria-controls="reset">Change Password</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#logout" role="tab"
+                        aria-controls="logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-8 p-0">
+            <div class="tab-content" style="height: 100%">
+                <div class="tab-pane" id="publish" role="tabpanel">@include('file.create')</div>
+                <div class="tab-pane" id="reset" role="tabpanel">@include('auth.reset_password')</div>
             </div>
-            <div class="form-group row">
-                <label for="password" name="password" class="col-md-4 col-form-label text-md-right login-label">Password : </label>
-                <div class="col-md-6">
-                    <input id="password" type="password" class="form-control" name="password" required >
-                </div>
-            </div>
-            <button type="submit" class="btn btn-light px-3 font-weight-bold mt-3"
-                style="width: 185px; background-color:#27bebe;color:#eee">
-                Login
-            </button>
-        </form>
+        </div>
     </div>
 </div>
 
