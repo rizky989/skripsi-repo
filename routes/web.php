@@ -16,5 +16,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/', 'HomeController')->name('home.page');
     Route::get('/file/{id}', 'File\ShowController')->name('detail.page');
     Route::get('/login', 'Auth\LoginFormController')->name('login.page');
+    Route::post('/login', 'Auth\LoginController')->name('login.user');
     Route::get('/profile', 'Auth\ProfileController')->name('profile.page');
+});
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('/logout', 'App\Http\Controllers\Auth\LogoutController')->name('logout.user');
 });

@@ -78,11 +78,15 @@
                         aria-controls="reset">Change Password</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#logout" role="tab"
-                        aria-controls="logout">Logout</a>
+                    <form action="{{ url('logout') }}" method="POST">
+                        @csrf
+                        <button class="nav-link w-100 text-left" type="submit">
+                            Logout
+                        </button>
+                    </form>
                 </li>
             </ul>
-        </div>
+    </div>
         <div class="col-8 p-0">
             <div class="tab-content" style="height: 100%">
                 <div class="tab-pane" id="publish" role="tabpanel">@include('file.create')</div>
