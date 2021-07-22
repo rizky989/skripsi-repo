@@ -17,11 +17,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/file/{id}', 'File\ShowController')->name('detail.page');
     Route::get('/login', 'Auth\LoginFormController')->name('login.page');
     Route::post('/login', 'Auth\LoginController')->name('login.user');
-    Route::get('/profile', 'Auth\ProfileController')->name('profile.page');
     Route::get('/essays', 'File\IndexFileController')->name('index.file');
 });
 
 Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['auth']], function () {
     Route::post('/logout', 'Auth\LogoutController')->name('logout.user');
     Route::post('/essay', 'File\CreateFileController')->name('upload.file');
+    Route::get('/profile', 'Auth\ProfileController')->name('profile.page');
 });
