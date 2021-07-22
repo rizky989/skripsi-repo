@@ -24,6 +24,7 @@
 
     <!-- Google Fonts | Open Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{asset('image/logo.jpeg')}}" >
     <style>
         .scroll-container {
             scroll-behavior: smooth!important;
