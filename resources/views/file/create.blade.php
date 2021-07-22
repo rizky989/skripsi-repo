@@ -1,5 +1,16 @@
 <h2 class="py-4">Publish Skripsi</h2>
-<form>
+@if (session()->has('message'))
+    <div style="margin-top:20px" class="alert alert-success px-4">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>
+            {!! session()->get('message') !!}
+        </strong>
+    </div>
+@endif
+<form action="{{route('upload.file')}}" method="POST"  enctype="multipart/form-data">
+    @csrf {{method_field('POST')}}
     <div class="form-group row">
         <label for="title" name="title" class="col-md-4 col-form-label text-md-right form-label">Judul : </label>
         <div class="col-md-6 p-0">
@@ -7,15 +18,27 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="dosen" name="dosen" class="col-md-4 col-form-label text-md-right form-label">Nama Dosen : </label>
+        <label for="lecturer" name="lecturer" class="col-md-4 col-form-label text-md-right form-label">Nama Dosen : </label>
         <div class="col-md-6 p-0">
-            <input id="dosen" type="text" class="form-control" name="dosen" required >
+            <input id="lecturer" type="text" class="form-control" name="lecturer" required >
         </div>
     </div>
     <div class="form-group row">
-        <label for="keyword" name="keyword" class="col-md-4 col-form-label text-md-right form-label">Keyword : </label>
+        <label for="abstract_id" name="abstract_id" class="col-md-4 col-form-label text-md-right form-label">Abstrak ( ID ) : </label>
         <div class="col-md-6 p-0">
-            <input id="keyword" type="text" class="form-control" name="keyword" required >
+            <textarea id="abstract_id" type="text" class="form-control" name="abstract_id" required ></textarea>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="abstract_en" name="abstract_en" class="col-md-4 col-form-label text-md-right form-label">Abstrak ( EN ) : </label>
+        <div class="col-md-6 p-0">
+            <textarea id="abstract_en" type="text" class="form-control" name="abstract_en" required ></textarea>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="keywords" name="keywords" class="col-md-4 col-form-label text-md-right form-label">Keyword : </label>
+        <div class="col-md-6 p-0">
+            <input id="keywords" type="text" class="form-control" name="keywords" required >
         </div>
     </div>
     <div class="form-group row">
@@ -27,13 +50,20 @@
     <div class="form-group row">
         <label for="file" name="file" class="col-md-4 col-form-label text-md-right form-label">File : </label>
         <div class="col-md-6 custom-file">
-            <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-            <label class="custom-file-label form-control" for="validatedCustomFile">Choose file...</label>
-            {{-- <input id="file" type="file" class="form-control" name="file" required > --}}
+            <input type="file" class="custom-file-input" id="validatedCustomFile" name="file" required accept=".pdf">
+            <label class="text-left custom-file-label form-control s-file__name" for="validatedCustomFile">Choose file...</label>
         </div>
     </div>
-    <button type="submit" class="btn btn-light px-3 font-weight-bold mt-3"
+    <button type="submit" class="btn btn-light px-3 font-weight-bold mt-3 mb-5"
         style="width: 185px; background-color:#27bebe;color:#eee">
         Submit
     </button>
 </form>
+@push('scripts')
+<script>
+    $(document).on('change', '#validatedCustomFile', function (e) {
+        $('.s-file__name').text(this.files[0].name);
+    });
+</script>
+
+@endpush

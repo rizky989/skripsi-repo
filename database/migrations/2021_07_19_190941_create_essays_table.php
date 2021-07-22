@@ -18,9 +18,9 @@ class CreateEssaysTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('title')->nullable();
             $table->string('lecturer')->nullable();
-            $table->string('year')->nullable();
-            $table->string('abstract_id')->nullable();
-            $table->string('abstract_en')->nullable();
+            $table->date('date')->nullable();
+            $table->text('abstract_id')->nullable();
+            $table->text('abstract_en')->nullable();
             $table->string('keywords')->nullable();
             $table->string('file')->nullable();
             $table->timestamps();

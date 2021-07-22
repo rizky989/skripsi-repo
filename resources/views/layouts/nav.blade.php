@@ -10,8 +10,8 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
             <a class="nav-item nav-link" style="color:#27bebe;" href="/">Beranda</span></a>
-            <a class="nav-item nav-link" style="color:#27bebe;" href="#search">Percarian</a>
-            <a class="nav-item nav-link" style="color:#27bebe;" href="#">Kontak Kami</a>
+            <a class="nav-item nav-link" style="color:#27bebe;" href="#search">Pencarian</a>
+            <a class="nav-item nav-link" style="color:#27bebe;" href="#contact">Kontak Kami</a>
             @if (Auth::user())
             <a class="nav-item nav-link" style="color:#27bebe;" href="/profile">Profile</a>
             @else

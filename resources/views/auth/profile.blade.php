@@ -67,7 +67,7 @@
 @section('content')
 <div class="row profile-section justify-content-md-center p-5">
     <div class="row profile-box p-0 text-center col-10">
-        <div class="col-4 p-0 text-left" style="border-right: 2px solid #27bebe!important;">
+        <div class="col-md-4 col-sm-12 p-0 text-left" style="border-right: 2px solid #27bebe!important;">
             <img src="{{asset('image/avatar.png')}}" width="80px" />
             <ul class="nav nav-tabs p-0 m-0" id="myTab" role="tablist">
                 <li class="nav-item">
@@ -87,8 +87,8 @@
                 </li>
             </ul>
     </div>
-        <div class="col-8 p-0">
-            <div class="tab-content" style="height: 100%">
+        <div class="col-md-8 col-sm-12 p-0">
+            <div class="tab-content px-4" style="height: 100%">
                 <div class="tab-pane" id="publish" role="tabpanel">@include('file.create')</div>
                 <div class="tab-pane" id="reset" role="tabpanel">@include('auth.reset_password')</div>
             </div>

@@ -24,6 +24,11 @@
 
     <!-- Google Fonts | Open Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .scroll-container {
+            scroll-behavior: smooth!important;
+        }
+    </style>
     @stack('styles')
 </head>
 
@@ -34,7 +39,7 @@
             @include('layouts.nav')
         </header>
 
-        <div class="body">
+        <div class="body scroll-container">
             <main class="main">
                 @yield('content')
             </main>
@@ -48,6 +53,7 @@
 
 <!-- Jquery plugins-->
 <script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <!-- CoreUI and necessary plugins-->
 <script src="{{ asset('core-ui') }}/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
 <!--[if IE]><!-->

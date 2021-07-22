@@ -18,7 +18,7 @@
 
 </style>
 @endpush
-<div class="contact-box p-5" id="search">
+<div class="contact-box p-5" id="contact">
     <h2 class="mb-4 text-center">Kontak Kami</h2>
     <div class="px-3 row">
         <div class="col-7 px-3">

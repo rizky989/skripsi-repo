@@ -8,7 +8,7 @@
         </div>
         <p style="margin-top:20px;font-size:14px">Please check your email for instructions to change password</p>
     </div>
-    <button type="submit" class="btn btn-light px-3 font-weight-bold mt-3"
+    <button type="submit" class="btn btn-light px-3 font-weight-bold mt-3 mb-5"
         style="width: 185px; background-color:#27bebe;color:#eee">
         Submit
     </button>
