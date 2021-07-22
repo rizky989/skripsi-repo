@@ -20,7 +20,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/essays', 'File\IndexFileController')->name('index.file');
 });
 
-Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['auth']], function () {
+Route::group(['namespace' => 'App\Http\Controllers','middleware' => ['role:student|lecturer']], function () {
     Route::post('/logout', 'Auth\LogoutController')->name('logout.user');
     Route::post('/essay', 'File\CreateFileController')->name('upload.file');
     Route::get('/profile', 'Auth\ProfileController')->name('profile.page');
