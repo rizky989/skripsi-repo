@@ -4,7 +4,8 @@
     .carousel-item {
         background-color: #27bebe;
         border: 2px solid #fefefe;
-        height: 650px;
+        height: auto;
+        max-height: 650px;
         border-radius: 8px
     }
 
@@ -39,31 +40,31 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{asset('image/banner_1.jpeg')}}" alt="First slide"
+                <img src="{{asset('image/banner_1.jpeg')}}"
                     style='height: 100%; width: 100%; object-fit: fill'>
             </div>
             <div class="carousel-item">
-                <img src="{{asset('image/banner_2.jpeg')}}" alt="Second slide"
+                <img src="{{asset('image/banner_2.jpeg')}}"
                     style='height: 100%; width: 100%; object-fit: fill'>
             </div>
             <div class="carousel-item">
-                <img src="{{asset('image/banner_3.jpeg')}}" alt="Second slide"
+                <img src="{{asset('image/banner_3.jpeg')}}"
                     style='height: 100%; width: 100%; object-fit: fill'>
             </div>
             <div class="carousel-item">
-                <img src="{{asset('image/banner_4.jpeg')}}" alt="Second slide"
+                <img src="{{asset('image/banner_4.jpeg')}}"
                     style='height: 100%; width: 100%; object-fit: fill'>
             </div>
             <div class="carousel-item">
-                <img src="{{asset('image/banner_5.jpeg')}}" alt="Second slide"
+                <img src="{{asset('image/banner_5.jpeg')}}"
                     style='height: 100%; width: 100%; object-fit: fill'>
             </div>
             <div class="carousel-item">
-                <img src="{{asset('image/banner_6.jpeg')}}" alt="Second slide"
+                <img src="{{asset('image/banner_6.jpeg')}}"
                     style='height: 100%; width: 100%; object-fit: fill'>
             </div>
             <div class="carousel-item">
-                <img src="{{asset('image/banner_7.jpeg')}}" alt="Second slide"
+                <img src="{{asset('image/banner_7.jpeg')}}"
                     style='height: 100%; width: 100%; object-fit: fill'>
             </div>
         </div>

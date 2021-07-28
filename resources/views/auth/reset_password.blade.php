@@ -3,8 +3,8 @@
     <div class="form-group">
         <label for="email" name="email" class="form-label" >Please enter your email address</label>
         <div class="p-0">
-            <input type="email" id="email" name="email" class="form-control w-50 m-auto"
-                placeholder="example@mail.com">
+            <input type="email" id="email-reset" name="email-reset" class="form-control w-50 m-auto"
+                value="{{Auth::user()->email}}">
         </div>
         <p style="margin-top:20px;font-size:14px">Please check your email for instructions to change password</p>
     </div>

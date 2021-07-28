@@ -24,4 +24,18 @@ Route::group(['namespace' => 'App\Http\Controllers','middleware' => ['role:stude
     Route::post('/logout', 'Auth\LogoutController')->name('logout.user');
     Route::post('/essay', 'File\CreateFileController')->name('upload.file');
     Route::get('/profile', 'Auth\ProfileController')->name('profile.page');
+    
+    Route::get('/student', 'Student\IndexStudentController')->name('student.index');
+    Route::post('/student', 'Student\CreateStudentController')->name('student.store');
+    Route::post('/student/{id}', 'Student\UpdateStudentController')->name('student.update');
+    Route::delete('/student/{id}', 'Student\DeleteStudentController')->name('student.destroy');
+
+    Route::get('/teacher', 'Teacher\IndexTeacherController')->name('teacher.index');
+    Route::post('/teacher', 'Teacher\CreateTeacherController')->name('teacher.store');
+    Route::post('/teacher/{id}', 'Teacher\UpdateTeacherController')->name('teacher.update');
+    Route::delete('/teacher/{id}', 'Teacher\DeleteTeacherController')->name('teacher.destroy');
+
+    Route::group(['middleware' => ['role:superadmin']], function () {
+        // Route::get('/student', 'Student\IndexStudentController')->name('profile.page');
+    });
 });

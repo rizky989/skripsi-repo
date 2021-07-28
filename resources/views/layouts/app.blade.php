@@ -10,6 +10,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Main styles for this application-->
     <link href="{{ asset('core-ui') }}/css/style.css" rel="stylesheet">
     <!-- Ionicons -->
@@ -60,6 +61,17 @@
 <!--[if IE]><!-->
 <script src="{{ asset('core-ui') }}/vendors/@coreui/icons/js/svgxuse.min.js"></script>
 <!--<![endif]-->
+<script>
+    let globalToken = $('meta[name="csrf-token"]').attr('content')
+
+    const load = `
+    <div class="d-flex justify-content-center align-items-center h-100" style="min-height: 40px;">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div class="ml-2">Memuat Data...</div>
+    </div>`;
+</script>
 @stack('scripts')
 
 </html>

@@ -69,7 +69,13 @@
     <div class="row profile-box p-0 text-center col-10">
         <div class="col-md-4 col-sm-12 p-0 text-left" style="border-right: 2px solid #27bebe!important;">
             <img src="{{asset('image/avatar.png')}}" width="80px" />
-            <ul class="nav nav-tabs p-0 m-0" id="myTab" role="tablist">
+            <ul class="nav nav-tabs p-0 m-0" id="myTab" role="tabDaftar">
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#list-student" role="tab" aria-controls="list-student">Daftar Mahasiswa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#list-teacher" role="tab" aria-controls="list-student">Daftar Dosen</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#publish" role="tab" aria-controls="publish">Publish Skripsi</a>
                 </li>
@@ -89,6 +95,8 @@
     </div>
         <div class="col-md-8 col-sm-12 p-0">
             <div class="tab-content px-4" style="height: 100%">
+                <div class="tab-pane active" id="list-student" role="tabpanel">@include('users.student.index')</div>
+                <div class="tab-pane" id="list-teacher" role="tabpanel">@include('users.teacher.index')</div>
                 <div class="tab-pane" id="publish" role="tabpanel">@include('file.create')</div>
                 <div class="tab-pane" id="reset" role="tabpanel">@include('auth.reset_password')</div>
             </div>
