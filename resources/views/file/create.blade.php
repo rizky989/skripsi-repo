@@ -26,13 +26,13 @@
     <div class="form-group row">
         <label for="abstract_id" name="abstract_id" class="col-md-4 col-form-label text-md-right form-label">Abstrak ( ID ) : </label>
         <div class="col-md-6 p-0">
-            <textarea id="abstract_id" type="text" class="form-control" name="abstract_id" required ></textarea>
+            <textarea id="abstract_id" type="text" class="form-control" name="abstract_id" required rows="5"></textarea>
         </div>
     </div>
     <div class="form-group row">
         <label for="abstract_en" name="abstract_en" class="col-md-4 col-form-label text-md-right form-label">Abstrak ( EN ) : </label>
         <div class="col-md-6 p-0">
-            <textarea id="abstract_en" type="text" class="form-control" name="abstract_en" required ></textarea>
+            <textarea id="abstract_en" type="text" class="form-control" name="abstract_en" required rows="5"></textarea>
         </div>
     </div>
     <div class="form-group row">
@@ -50,10 +50,11 @@
     <div class="form-group row">
         <label for="file" name="file" class="col-md-4 col-form-label text-md-right form-label">File : </label>
         <div class="col-md-6 custom-file">
-            <input type="file" class="custom-file-input" id="validatedCustomFile" name="file" required accept=".pdf">
-            <label class="text-left custom-file-label form-control s-file__name" for="validatedCustomFile">Choose file...</label>
+            <input type="file" class="custom-file-input" id="validatedCustomFile" name="file" accept=".pdf" required>
+            <label class="text-left custom-file-label form-control s-file__name" for="validatedCustomFile" style="max-width: 100%">Choose file...</label>
         </div>
     </div>
+    <input type="hidden" id="essay-id" name="id">
     <button type="submit" class="btn btn-light px-3 font-weight-bold mt-3 mb-5"
         style="width: 185px; background-color:#27bebe;color:#eee">
         Submit
@@ -61,9 +62,27 @@
 </form>
 @push('scripts')
 <script>
+    let res = {!!json_encode($file) !!}
+
+    function loadFile() {
+        if(res) {
+            $('#title').val(res.title)
+            $('#lecturer').val(res.lecturer)
+            $('#abstract_id').val(res.abstract_id)
+            $('#abstract_en').val(res.abstract_en)
+            $('#keywords').val(res.keywords)
+            $('#date').val(res.date)
+            $('#essay-id').val(res.id)
+            $('.s-file__name').text(res.file.slice(33, 58));
+            $('#validatedCustomFile').removeAttr('required')
+        }
+    }
+
     $(document).on('change', '#validatedCustomFile', function (e) {
         $('.s-file__name').text(this.files[0].name);
     });
+
+    loadFile()
 </script>
 
 @endpush
