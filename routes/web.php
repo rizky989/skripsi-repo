@@ -18,10 +18,13 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/login', 'Auth\LoginFormController')->name('login.page');
     Route::post('/login', 'Auth\LoginController')->name('login.user');
     Route::get('/essays', 'File\IndexFileController')->name('index.file');
+    Route::get('/reset/{token}', 'Auth\ResetPasswordFormController')->name('reset.page');
+    Route::post('/reset/{token}', 'Auth\ResetPasswordSubmitController')->name('reset.submit');
 });
 
 Route::group(['namespace' => 'App\Http\Controllers','middleware' => ['role:student|lecturer|superadmin']], function () {
     Route::post('/logout', 'Auth\LogoutController')->name('logout.user');
+    Route::post('/reset-password', 'Auth\ResetPasswordController')->name('reset-password');
     Route::post('/essay', 'File\CreateFileController')->name('upload.file');
     Route::get('/profile', 'Auth\ProfileController')->name('profile.page');
 

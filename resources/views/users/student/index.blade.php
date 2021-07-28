@@ -56,13 +56,6 @@
 @include('users.student.edit')
 @include('users.student.delete')
 
-<script src="{{ asset('vendor/jquery.min.js') }}"></script>
-<script src="{{ asset('vendor/datatables/datatables.min.js') }}"></script>
-<script src="{{ asset('vendor/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('vendor/bootbox.min.js') }}"></script>
-<script src="{{ asset('vendor/moment.min.js') }}"></script>
-<script src="{{ asset('vendor/daterangepicker.js') }}"></script>
-<script src="{{ asset('js/session-handler.js') }}"></script>
 <script>
     $(document).ready(function () {
 

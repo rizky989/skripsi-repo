@@ -86,7 +86,7 @@
                 @else
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#reset" role="tab"
-                        aria-controls="reset">Change Password</a>
+                        aria-controls="reset">Reset Password</a>
                 </li>
                 @endrole
                 <li class="nav-item">
