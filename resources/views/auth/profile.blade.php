@@ -70,19 +70,25 @@
         <div class="col-md-4 col-sm-12 p-0 text-left" style="border-right: 2px solid #27bebe!important;">
             <img src="{{asset('image/avatar.png')}}" width="80px" />
             <ul class="nav nav-tabs p-0 m-0" id="myTab" role="tabDaftar">
+                @unlessrole('student')
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#list-student" role="tab" aria-controls="list-student">Daftar Mahasiswa</a>
+                    <a class="nav-link active" data-toggle="tab" href="#list-student" role="tab" aria-controls="list-student">Daftar Mahasiswa</a>
                 </li>
+                @else
+                <li class="nav-item">
+                    <a class="nav-link @role('student') active @endrole " data-toggle="tab" href="#publish" role="tab" aria-controls="publish">Publish Skripsi</a>
+                </li>
+                @endunlessrole
+                @role('superadmin')
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#list-teacher" role="tab" aria-controls="list-student">Daftar Dosen</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#publish" role="tab" aria-controls="publish">Publish Skripsi</a>
-                </li>
+                @else
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#reset" role="tab"
                         aria-controls="reset">Change Password</a>
                 </li>
+                @endrole
                 <li class="nav-item">
                     <form action="{{ url('logout') }}" method="POST">
                         @csrf
@@ -95,10 +101,16 @@
     </div>
         <div class="col-md-8 col-sm-12 p-0">
             <div class="tab-content px-4" style="height: 100%">
+                @unlessrole('student')
                 <div class="tab-pane active" id="list-student" role="tabpanel">@include('users.student.index')</div>
+                @else
+                <div class="tab-pane active" id="publish" role="tabpanel">@include('file.create')</div>
+                @endunlessrole
+                @role('superadmin')
                 <div class="tab-pane" id="list-teacher" role="tabpanel">@include('users.teacher.index')</div>
-                <div class="tab-pane" id="publish" role="tabpanel">@include('file.create')</div>
+                @else
                 <div class="tab-pane" id="reset" role="tabpanel">@include('auth.reset_password')</div>
+                @endrole
             </div>
         </div>
     </div>

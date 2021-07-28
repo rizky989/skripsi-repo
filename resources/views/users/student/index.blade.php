@@ -29,11 +29,11 @@
 <div class="col-md-12 px-3 pt-5 py-3 d-flex justify-content-between">
     <div class="col-md-8 col-sm-8 mb-2 px-0 text-left">
         <button type="button" class="btn" style="background-color:#27bebe; color: #FFF"
-             data-toggle="modal" data-target="#addModal">Add New User</button>
+            data-toggle="modal" data-target="#addModal">Add New User</button>
     </div>
     <div class="col-md-4 col-sm-4 px-0 mb-2">
         <input type="text" id="search" name="search" class="form-control dash-search"
-                placeholder="Search">
+            placeholder="Search">
     </div>
 </div>
 <div class="col-md-12 mb-5 px-0 rounded overflow-hidden">
