@@ -108,7 +108,7 @@
 </div>
 <div class="list-box text-center p-4" id="search">
     <h2 class="mb-4" style="color: #eee;">Pencarian</h2>
-    <div class="px-5">
+    <div class="px-2">
         <div class="search-section mb-4">
             <select class="form-control w-50 m-auto" id="filter-by">
                 <option value="title">Judul</option>
@@ -121,7 +121,7 @@
                 Search
             </button>
         </div>
-        <div class="mb-5">
+        <div class="mb-5 table-responsive">
             <table class="table table-light w-75 m-auto" id="fileTable">
                 <thead class="thead-light">
                     <tr>

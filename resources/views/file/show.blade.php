@@ -28,7 +28,7 @@
         <h4>Nama Penulis : {{$essay->author->name}}</h4>
         <h4>Nama Pembimbing : <b>{{$essay->lecturer}}</b></h4>
     </div>
-    <div style="padding:20px 150px">
+    <div style="padding:20px" class="col-md-10 offset-md-1">
         <h2 class="mt-4">Daftar Pustaka : </h2>
         <div class="caption">
             <p>{{$essay->abstract_id}}</p>

@@ -21,11 +21,11 @@
 <div class="contact-box p-5" id="contact">
     <h2 class="mb-4 text-center">Kontak Kami</h2>
     <div class="px-3 row">
-        <div class="col-7 px-3">
+        <div class="col-md-7 col-sm-12 p-3">
             <h4>Lokasi :</h4>
             <div id="map_canvas" class="rounded-lg"></div>
         </div>
-        <div class="col-5 px-3 contact-info">
+        <div class="col-md-5 col-sm-12 p-3 contact-info">
             <h4>Alamat :</h4>
             <p>Jalan Prof. DR. G.A. Siwabessy, Kampus
                 Universitas Indonesia, Depok, 16425</p>
