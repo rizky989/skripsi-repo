@@ -66,6 +66,8 @@
 
     function loadFile() {
         if(res) {
+            let fileName =  res.file.substring(res.file.indexOf('-') + 1);
+            let fileChar = fileName.length > 20 ? fileName.substring(0, 20) + '...' : fileName
             $('#title').val(res.title)
             $('#lecturer').val(res.lecturer)
             $('#abstract_id').val(res.abstract_id)
@@ -73,7 +75,7 @@
             $('#keywords').val(res.keywords)
             $('#date').val(res.date)
             $('#essay-id').val(res.id)
-            $('.s-file__name').text(res.file.slice(33, 58));
+            $('.s-file__name').text(fileChar);
             $('#validatedCustomFile').removeAttr('required')
         }
     }
