@@ -17,7 +17,7 @@ class ResetPasswordController extends Controller
     {
         $token = Str::random(32);
         $user = Auth::user();
-        // return view('emails.reset', compact('user','token'));
+        
         PasswordReset::create([
             'email' => $user->email,
             'token' => $token,
