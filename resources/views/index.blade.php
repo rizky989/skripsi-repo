@@ -78,32 +78,9 @@
         </a>
     </div>
     <div class="px-5 py-3 caption">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum auctor metus id mauris elementum
-            hendrerit.
-            Donec sapien dui, aliquam in leo et, interdum dignissim nisl. Proin eu nisl ut ipsum congue condimentum.
-            Nullam
-            ac nisi vitae leo scelerisque ornare eu et nisl. Donec ultricies libero lectus, eu finibus arcu dapibus non.
-            Quisque pellentesque magna sit amet libero tincidunt, eu vestibulum ex sollicitudin. Nulla vestibulum ornare
-            magna, molestie pellentesque dui elementum quis. Nulla porta quis dolor a varius. Donec posuere maximus leo,
-            non
-            sollicitudin erat aliquet at. Aliquam vel lorem orci. Etiam faucibus mollis ullamcorper. Vestibulum suscipit
-            mattis fermentum. Sed porttitor orci quam, ac consequat dolor vestibulum vel. Nunc ullamcorper nisl dolor,
-            at
-            iaculis nunc faucibus maximus.</p>
-
-        <p>Praesent mauris ligula, mollis a sollicitudin quis, finibus eu tellus. Donec luctus risus in vestibulum
-            cursus.
-            Nullam fringilla lacus in velit varius, et tempus eros consectetur. Class aptent taciti sociosqu ad litora
-            torquent per conubia nostra, per inceptos himenaeos. Sed tempus urna at risus tempus accumsan. Praesent at
-            convallis diam. Phasellus accumsan bibendum mi sed tincidunt. Donec id posuere mi. Integer turpis velit,
-            maximus
-            sed viverra eu, tristique quis massa. Suspendisse eleifend nec velit a blandit. Nulla ac iaculis ante.
-            Nullam
-            mattis, ex vitae semper vulputate, lorem enim molestie ex, et fermentum mauris felis eu ligula. In imperdiet
-            nunc purus, id pretium justo sagittis sed. Donec elementum nisl nec ligula imperdiet, a blandit mauris
-            congue.
-            Pellentesque vulputate, erat sit amet luctus vestibulum, nisl tortor ultrices ex, ut posuere eros mauris ut
-            erat. Donec in quam consectetur, vulputate dolor sit amet, bibendum dui.</p>
+        <p>Repository Program Studi Broadband Multimedia Politeknik Negeri Jakarta adalah layanan digital yang mengumpulkan,
+            merawat dan menyebarkan. Repository layanan digital yang memanfaatkan teknologi web dapat
+            memberikan kemudahan pengguna untuk memenuhi kebutuhan informasi.</p>
     </div>
 </div>
 <div class="list-box text-center p-4" id="search">
