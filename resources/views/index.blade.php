@@ -24,6 +24,18 @@
         /* padding: 0 180px 0 180px */
     }
 
+    #data-table_info {
+        color:#eee!important
+    }
+
+    .pagination {
+        justify-content: center!important
+    }
+
+    .page-item.active .page-link{
+        border:0.5px solid #d8dbe0!important
+    }
+
 </style>
 @endpush
 @section('content')
@@ -99,7 +111,7 @@
             </button>
         </div>
         <div class="mb-5 table-responsive">
-            <table class="table table-light w-75 m-auto" id="fileTable">
+            <table class="table table-light w-75 m-auto" id="data-table">
                 <thead class="thead-light">
                     <tr>
                         <th>No</th>
@@ -123,56 +135,73 @@
     $(document).ready(function () {
         let filterBy, query = '';
 
-        const loadTable = function (filterBy, query) {
-            let url = `/essays?filter_by=${filterBy}&q=${query}`
-            $.ajax({
-                type: "GET",
-                cache: false,
-                url: url,
-                beforeSend: function () {
-                    $('#searchButton').attr('disabled', 'disabled');
-                },
-                success: function (data) {
-                    $('#fileTable tbody').empty()
-                    if (data.length > 0) {
-                        $.each(data, function (i, item) {
-                            let trHtml = '<tr>' +
-                                '<td>' + (i+1) + '</td>' +
-                                '<td>' + item.author.name + '</td>' +
-                                '<td>' + item.title + '</td>' +
-                                '<td>' + moment(item.date, 'YYYY-MM-DD').format("YYYY") + '</td>' +
-                                '<td>' + `<a href="/file/${item.id}"+>
-                                    <button type="button" class="btn btn-light px-3 font-weight-bold"
-                                        style="width: 135px;">
-                                        PDF
-                                    </button>
-                                </a>` + '</td>' +
-                                '</tr>';
-                            $('#fileTable tbody').append(trHtml);
-                        });
-                    } else {
-                        let trHtml = '<tr>' +
-                                '<td colspan="5" style="text-align:center"> Data tidak ditemukan </tr>';
-                        $('#fileTable tbody').append(trHtml);
-                    }
-                },
-                error: function (data) {
-                    console.error('error : ', data)
-                },
-                complete: function () {
-                    $('#searchButton').removeAttr('disabled');
+        let dataTable = $('#data-table').DataTable({
+            language: {
+                "sEmptyTable": "Tidak ada data yang tersedia pada tabel ini",
+                "sProcessing": load,
+                "sLengthMenu": " _MENU_ ",
+                "sZeroRecords": "Tidak ditemukan data yang sesuai",
+                "sInfo": "Menampilkan _START_ sampai _END_ dari _TOTAL_ entri",
+                "sInfoEmpty": "Menampilkan 0 sampai 0 dari 0 entri",
+                "sInfoFiltered": "(disaring dari _MAX_ entri keseluruhan)",
+                "sSearch": "",
+                "searchPlaceholder": "Ketik untuk mencari..",
+                "oPaginate": {
+                    "sFirst": "Pertama",
+                    "sPrevious": "Sebelumnya",
+                    "sNext": "Selanjutnya",
+                    "sLast": "Terakhir"
                 }
-            })
-        }
+            },
+            pageLength: 5,
+            pagingType: "numbers",
+            processing: true,
+            serverSide: true,
+            ajax: {
+                url: `/essays`,
+                data: function (d) {
+                    d.filter_by = filterBy || null;
+                    d.q = query || null;
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    if (errorThrown == 'Unauthorized') {
+                        sessionTimeout();
+                    }
+                }
+            },
+            columns: [{
+                    data: 'DT_RowIndex',
+                    name: 'DT_RowIndex',
+                    orderable: false
+                }, {
+                    data: 'author.name'
+                },
+                {
+                    data: 'title'
+                },
+                {
+                    data: 'year'
+                },
+                {
+                    data: 'detail',
+                    className: "text-center",
+                    searchable: false,
+                    orderable: false
+                }
+            ],
+            dom: `<'row '<'col-sm-12 d-none'lfB>>
+                <'row no-gutters'<'col-sm-12 rounded overflow-auto'rt>>
+                    <'row pageInfo'>
+                        <'row mt-4 dataTable__footer'<'col-md-5 col-sm-6 text-left offset-md-2 mb-3 'i>
+                            <'col-md-5 col-sm-6 mb-3 'p>>`,
+        });
 
         $("#searchButton").on('click', function (e) {
             e.preventDefault()
-            let inputFilterBy = $('#filter-by').val()
-            let inputQuery = $('#query').val()
-            loadTable(inputFilterBy, inputQuery)
+            filterBy = $('#filter-by').val()
+            query = $('#query').val()
+            dataTable.draw();
         })
-
-        loadTable()
     });
 
 </script>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\File;
 
+use DataTables;
+use Carbon\Carbon;
 use App\Models\Essay;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -23,6 +25,15 @@ class IndexFileController extends Controller
                 return $query->where('name', 'like', "%$request->q%");
             });
         }
-        return $essay->latest()->limit(5)->get();
+        // return $essay->latest()->limit(5)->get();
+        return DataTables::of($essay->get())
+            ->addIndexColumn()
+            ->addColumn('year', function($item){
+                return Carbon::parse($item->date)->format('Y');
+            })
+            ->addColumn('detail', function($item){
+                return view('file.detail', ['item' => $item]);
+            })
+            ->make(true);
     }
 }

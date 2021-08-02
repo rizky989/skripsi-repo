@@ -23,15 +23,15 @@
         display: block;
         margin-right: 20px;
         border-bottom: 0;
-        border-right: none!important;
+        border-right: none !important;
         width: 100%;
-        font-size:18px;
+        font-size: 18px;
     }
 
     .nav-tabs .nav-link {
-        border-top-left-radius: .25rem!important;
-        border-bottom-left-radius: .25rem!important;
-        border-top-right-radius: .25rem!important;
+        border-top-left-radius: .25rem !important;
+        border-bottom-left-radius: .25rem !important;
+        border-top-right-radius: .25rem !important;
         background: #fff;
         color: #27bebe;
     }
@@ -72,21 +72,24 @@
             <ul class="nav nav-tabs p-0 m-0" id="myTab" role="tabDaftar">
                 @unlessrole('student')
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#list-student" role="tab" aria-controls="list-student">Daftar Mahasiswa</a>
+                    <a class="nav-link active" data-toggle="tab" href="#list-student" role="tab"
+                        aria-controls="list-student">Daftar Mahasiswa</a>
                 </li>
                 @else
                 <li class="nav-item">
-                    <a class="nav-link @role('student') active @endrole " data-toggle="tab" href="#publish" role="tab" aria-controls="publish">Publish Skripsi</a>
+                    <a class="nav-link @role('student') active @endrole " data-toggle="tab" href="#publish" role="tab"
+                        aria-controls="publish">Publish Skripsi</a>
                 </li>
                 @endunlessrole
                 @role('superadmin')
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#list-teacher" role="tab" aria-controls="list-student">Daftar Dosen</a>
+                    <a class="nav-link" data-toggle="tab" href="#list-teacher" role="tab"
+                        aria-controls="list-student">Daftar Dosen</a>
                 </li>
                 @else
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#reset" role="tab"
-                        aria-controls="reset">Reset Password</a>
+                    <a class="nav-link" data-toggle="tab" href="#reset" role="tab" aria-controls="reset">Reset
+                        Password</a>
                 </li>
                 @endrole
                 <li class="nav-item">
@@ -98,7 +101,7 @@
                     </form>
                 </li>
             </ul>
-    </div>
+        </div>
         <div class="col-md-8 col-sm-12 p-0">
             <div class="tab-content px-4" style="height: 100%">
                 @unlessrole('student')
