@@ -29,7 +29,7 @@
         <h4>Nama Pembimbing : <b>{{$essay->lecturer}}</b></h4>
     </div>
     <div style="padding:20px" class="col-md-10 offset-md-1">
-        <h2 class="mt-4">Daftar Pustaka : </h2>
+        <h2 class="mt-4">Abstrak : </h2>
         <div class="caption">
             <p>{{$essay->abstract_id}}</p>
             <p>{{$essay->abstract_en}}</p>

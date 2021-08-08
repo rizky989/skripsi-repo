@@ -25,7 +25,10 @@ class IndexFileController extends Controller
                 return $query->where('name', 'like', "%$request->q%");
             });
         }
-        // return $essay->latest()->limit(5)->get();
+        if($request->filter_by === 'lecturer') {
+            $essay = $essay->where('lecturer', 'like', "%$request->q%");
+        }
+
         return DataTables::of($essay->get())
             ->addIndexColumn()
             ->addColumn('year', function($item){

@@ -102,6 +102,7 @@
             <select class="form-control w-50 m-auto" id="filter-by">
                 <option value="title">Judul</option>
                 <option value="author">Penulis</option>
+                <option value="lecturer">Pembimbing</option>
                 <option value="year">Tahun</option>
             </select><br>
             <input type="text" id="query" name="query" class="form-control w-50 m-auto" placeholder="Input Here">
