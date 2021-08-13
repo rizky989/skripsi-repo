@@ -118,6 +118,7 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Judul</th>
+                        <th>Pembimbing</th>
                         <th>Tahun</th>
                         <th>Detail</th>
                     </tr>
@@ -179,6 +180,9 @@
                 },
                 {
                     data: 'title'
+                },
+                {
+                    data: 'lecturer'
                 },
                 {
                     data: 'year'
