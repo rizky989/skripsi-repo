@@ -14,8 +14,12 @@ class CreateFileController extends Controller
     {
         $input = $request->except('id');
         if($request->file) {
-            $fileName = $this->upload($request->file('file'));
+            $fileName = $this->upload($request->file('file'), 'file/essay');
             $input['file'] = $fileName;
+        }
+        if($request->journal) {
+            $journalName = $this->upload($request->file('journal'), 'file/journal');
+            $input['journal'] = $journalName;
         }
         $input['user_id'] = Auth::user()->id;
 
@@ -28,10 +32,10 @@ class CreateFileController extends Controller
         }
     }
 
-    private function upload($file)
+    private function upload($file, $dir)
     {
         $fileName = Str::random(32).'-'. $file->getClientOriginalName();
-        $file->move(public_path('file/essay'), $fileName);
+        $file->move(public_path($dir), $fileName);
         return $fileName;
     }
 }

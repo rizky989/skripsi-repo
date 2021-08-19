@@ -35,11 +35,18 @@
             <p>{{$essay->abstract_en}}</p>
         </div>
         <p style="font-size: 18px;font-weight:bold">Kata Kunci : {{$essay->keywords}}</p>
-        <button type="button" class="btn btn-light px-3 font-weight-bold" style="width: 185px;" id="viewFile">
-            View File
-        </button>
-        <iframe src="{{asset('file/essay/'.$essay->file)}}" class="pdf-file d-none"></iframe>
-        <iframe id="pdf-canvas" class="d-none"></iframe>
+        <div class="mb-4">
+            <button type="button" class="btn btn-light px-3 font-weight-bold" style="width: 185px;" id="viewFile">
+                View File Skripsi
+            </button>
+            <iframe src="{{asset('file/essay/'.$essay->file)}}" class="pdf-file d-none" id="pdf-skripsi"></iframe>
+        </div>
+        <div class="mb-4">
+            <button type="button" class="btn btn-light px-3 font-weight-bold" style="width: 185px;" id="viewJournal">
+                View File Jurnal
+            </button>
+            <iframe src="{{asset('file/journal/'.$essay->journal)}}" class="pdf-file d-none" id="pdf-journal"></iframe>
+        </div>
     </div>
 </div>
 @include('layouts.contact')
@@ -51,10 +58,14 @@
     $(document).on('click', '#viewFile', function () {
         let loggedId = {!!json_encode(Auth::user()) !!}
         if (loggedId) {
-            $('.pdf-file').removeClass('d-none')
+            $('#pdf-skripsi').removeClass('d-none')
         } else {
             alert('Anda harus login terlebih dahulu')
         }
+    });
+
+    $(document).on('click', '#viewJournal', function () {
+        $('#pdf-journal').removeClass('d-none')
     });
 
 </script>

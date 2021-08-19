@@ -100,6 +100,15 @@
                         </button>
                     </form>
                 </li>
+                @role('student')
+                <div class="p-3 mt-5" style="border-top: solid 2px #27bebe">
+                    <p>Pengumuman Format File</p>
+                    <ul>
+                        <li class="mb-3" style="list-style-type: square">File pdf skripsi harus diberi watermark terlebih dahulu</li>
+                        <li class="mb-3" style="list-style-type: square">Ukuran file pdf skripsi dan jurnal memiliki ukuran maksimal 15 MB</li>
+                    </ul>
+                </div>
+                @endrole
             </ul>
         </div>
         <div class="col-md-8 col-sm-12 p-0">
