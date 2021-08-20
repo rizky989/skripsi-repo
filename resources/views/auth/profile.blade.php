@@ -104,8 +104,8 @@
                 <div class="p-3 mt-5" style="border-top: solid 2px #27bebe">
                     <p>Pengumuman Format File</p>
                     <ul>
-                        <li class="mb-3" style="list-style-type: square">File pdf skripsi harus diberi watermark terlebih dahulu</li>
-                        <li class="mb-3" style="list-style-type: square">Ukuran file pdf skripsi dan jurnal memiliki ukuran maksimal 15 MB</li>
+                        <li class="mb-3" style="list-style-type: square">File dalam format pdf dengan diberi watermark logo PNJ dan diproteksi sehingga tidak dapat dicopy-paste (gunakan tools misalnya Adobe Acrobat Pro, pdf2go, dll)</li>
+                        <li class="mb-3" style="list-style-type: square">Ukuran file laporan dan jurnal skripsi tidak boleh melebihi 15 MB</li>
                     </ul>
                 </div>
                 @endrole
